@@ -1,0 +1,695 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Integers</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="a3b154fd-0083-4e9d-9004-e577279ef5d7" class="page sans"><header><h1 class="page-title">Integers</h1><p class="page-description"></p></header><div class="page-body"><p id="c35283a9-0184-4e7c-8018-f7a6950ea380" class="">
+</p><ol type="1" id="4e96f0d3-2a19-453e-af64-c8b8edd19144" class="numbered-list" start="1"><li><strong>What are integers in Rust?</strong>
+Integers are whole numbers without a fractional part. Rust provides several integer types with different ranges and sizes. The most commonly used integer types are <code>i8</code>, <code>i16</code>, <code>i32</code>, <code>i64</code>, <code>u8</code>, <code>u16</code>, <code>u32</code>, and <code>u64</code>.</li></ol><ol type="1" id="129d422f-68c3-4962-912a-54f1601d8663" class="numbered-list" start="2"><li><strong>Signed and unsigned integers:</strong>
+Integer types starting with <code>i</code> (e.g., <code>i8</code>, <code>i16</code>, <code>i32</code>, <code>i64</code>) are signed integers, which can represent both positive and negative numbers. Unsigned integers, starting with <code>u</code> (e.g., <code>u8</code>, <code>u16</code>, <code>u32</code>, <code>u64</code>), can only represent non-negative numbers.</li></ol><ol type="1" id="bbf720d2-9611-4821-b876-d0fb02123094" class="numbered-list" start="3"><li><strong>Creating integers:</strong>
+Integers can be assigned to variables using the appropriate type annotation (<code>i8</code>, <code>i16</code>, <code>i32</code>, <code>i64</code>, <code>u8</code>, <code>u16</code>, <code>u32</code>, <code>u64</code>) and a numeric literal. For example:<pre id="3ae67d86-efec-4c55-b13d-7b45e9f92cde" class="code code-wrap"><code>let x: i32 = 42;
+let y = 123; // Type inference infers the type as i32
+</code></pre></li></ol><ol type="1" id="02751889-43cb-4695-a8a0-ad27f5de3577" class="numbered-list" start="4"><li><strong>Integer literals:</strong>
+Integer literals can be represented in decimal form, hexadecimal form (with the prefix <code>0x</code>), octal form (with the prefix <code>0o</code>), or binary form (with the prefix <code>0b</code>). For example, <code>42</code>, <code>0xAB</code>, <code>0o77</code>, and <code>0b1010</code> are valid integer literals in Rust.</li></ol><ol type="1" id="931842ae-6604-4dd9-91ce-de1668a37ae6" class="numbered-list" start="5"><li><strong>Integer range and size:</strong>
+The size of an integer type determines the range of values it can represent. For example, <code>i8</code> can represent integers from -128 to 127, while <code>i16</code> can represent integers from -32,768 to 32,767. The larger the size of the integer type, the wider the range of representable values.</li></ol><ol type="1" id="40742981-85c7-47cf-9a64-ff157f7a2b84" class="numbered-list" start="6"><li><strong>Integer operations:</strong>
+Integers support standard arithmetic operations such as addition (<code>+</code>), subtraction (<code></code>), multiplication (<code></code>), and division (<code>/</code>). For example:<pre id="e60d7d06-e01b-443e-b670-163b9d9ef49d" class="code code-wrap"><code>let x: i32 = 42;
+let y: i32 = 10;
+let sum = x + y;
+let product = x * y;
+</code></pre></li></ol><ol type="1" id="5e3a4646-c8f8-4dfe-8726-51cce00e58fc" class="numbered-list" start="7"><li><strong>Integer overflow and underflow:</strong>
+Rust provides built-in protection against integer overflow and underflow. In debug builds, if an operation causes overflow or underflow, Rust will panic and terminate the program. In release builds, Rust wraps the result using two&#x27;s complement wrapping behavior.</li></ol><ol type="1" id="198807bc-1ec8-4e88-bd53-4b431072b46b" class="numbered-list" start="8"><li><strong>Integer conversion:</strong>
+Rust provides methods to convert between different integer types. You can use methods like <code>.into()</code> or the <code>as</code> keyword to explicitly convert between integer types. For example:<pre id="e6d2df4e-9789-4cde-b13f-45b16308a211" class="code code-wrap"><code>let x: u8 = 42;
+let y: i32 = x.into(); // Convert u8 to i32
+let z: u16 = x as u16; // Convert u8 to u16
+</code></pre></li></ol><ol type="1" id="334857d0-718e-4d55-842d-9ee7c75b1537" class="numbered-list" start="9"><li><strong>Bitwise operations:</strong>
+Integers support bitwise operations such as bitwise AND (<code>&amp;</code>), bitwise OR (<code>|</code>), bitwise XOR (<code>^</code>), bitwise complement (<code>!</code>), left shift (<code>&lt;&lt;</code>), and right shift (<code>&gt;&gt;</code>). These operations manipulate the individual bits of integers.</li></ol><ol type="1" id="1385f332-d1b2-465a-b49b-36ac32bad8cb" class="numbered-list" start="10"><li><strong>Integer and control flow:</strong>
+Integers play a crucial role in control flow statements. They are used to control the execution of loops (<code>while</code>, <code>for</code>), conditional branches (<code>if</code>, `</li></ol><p id="c10cac25-7e9d-4964-b316-6ae094a1ff64" class="">else if<code>, </code>else`), and other control flow constructs in Rust.</p><p id="f64555aa-057d-4688-9efc-48d66fb288bf" class="">Integers are widely used for counting, indexing, and performing arithmetic operations in programming. Understanding the properties and limitations of integer types is essential for writing correct and efficient code in Rust.</p><p id="3e02f33f-1468-45f4-8f1e-5df36ac2422b" class="">Here&#x27;s a table listing functions available for integers in Rust (<code>i8</code>, <code>i16</code>, <code>i32</code>, <code>i64</code>, <code>i128</code>, <code>isize</code>, <code>u8</code>, <code>u16</code>, <code>u32</code>, <code>u64</code>, <code>u128</code>, <code>usize</code>):</p><table id="3627fcfe-b159-4cf9-854f-dc568e4d508d" class="simple-table"><tbody><tr id="390daff5-d6da-4fcf-b51b-0e6d7ccabfc2"><td id="ed&lt;I" class="">Operation</td><td id="G@]X" class="">Function Name</td><td id="TOwQ" class="">Return Type</td><td id="HPbh" class="">Argument Type</td></tr><tr id="fdb0c61d-a4c5-458a-a27c-516b1b3b5ef0"><td id="ed&lt;I" class="">Converting to a string representation</td><td id="G@]X" class=""><code>to_string</code></td><td id="TOwQ" class=""><code>String</code></td><td id="HPbh" class="">None</td></tr><tr id="24982ebe-bdc6-45f4-b38a-a369d4ad088d"><td id="ed&lt;I" class="">Converting to a lowercase hexadecimal string representation</td><td id="G@]X" class=""><code>to_string_radix</code></td><td id="TOwQ" class=""><code>String</code></td><td id="HPbh" class=""><code>u32</code></td></tr><tr id="790b7a04-7f46-4e8c-8047-c693cc16be0a"><td id="ed&lt;I" class="">Converting to an uppercase hexadecimal string representation</td><td id="G@]X" class=""><code>to_string_radix_uppercase</code></td><td id="TOwQ" class=""><code>String</code></td><td id="HPbh" class=""><code>u32</code></td></tr><tr id="00a4c092-b600-4ccb-9697-183b59d72797"><td id="ed&lt;I" class="">Converting to a signed radix string representation</td><td id="G@]X" class=""><code>to_string_radix_signed</code></td><td id="TOwQ" class=""><code>String</code></td><td id="HPbh" class=""><code>i32</code></td></tr><tr id="72cee55b-3c74-4870-9b4b-8affc347e893"><td id="ed&lt;I" class="">Wrapping subtraction</td><td id="G@]X" class=""><code>wrapping_sub</code></td><td id="TOwQ" class="">Same as input type</td><td id="HPbh" class="">Same as input type</td></tr><tr id="592ac203-a3cc-4f8c-9128-fd92fe8ae4f6"><td id="ed&lt;I" class="">Wrapping addition</td><td id="G@]X" class=""><code>wrapping_add</code></td><td id="TOwQ" class="">Same as input type</td><td id="HPbh" class="">Same as input type</td></tr><tr id="3e3c3652-8598-4230-af9c-99ef29fd25e9"><td id="ed&lt;I" class="">Wrapping multiplication</td><td id="G@]X" class=""><code>wrapping_mul</code></td><td id="TOwQ" class="">Same as input type</td><td id="HPbh" class="">Same as input type</td></tr><tr id="38eebf55-4595-46a9-8c70-9fb22ee845df"><td id="ed&lt;I" class="">Checked subtraction</td><td id="G@]X" class=""><code>checked_sub</code></td><td id="TOwQ" class=""><code>Option&lt;T&gt;</code></td><td id="HPbh" class="">Same as input type</td></tr><tr id="ce68ead3-b206-4a8d-a617-b0f38ce121ed"><td id="ed&lt;I" class="">Checked addition</td><td id="G@]X" class=""><code>checked_add</code></td><td id="TOwQ" class=""><code>Option&lt;T&gt;</code></td><td id="HPbh" class="">Same as input type</td></tr><tr id="ad910129-db4d-41ac-a422-5d00946a92e4"><td id="ed&lt;I" class="">Checked multiplication</td><td id="G@]X" class=""><code>checked_mul</code></td><td id="TOwQ" class=""><code>Option&lt;T&gt;</code></td><td id="HPbh" class="">Same as input type</td></tr><tr id="ba92c285-1dce-4304-bd5f-8bda50306774"><td id="ed&lt;I" class="">Saturating subtraction</td><td id="G@]X" class=""><code>saturating_sub</code></td><td id="TOwQ" class="">Same as input type</td><td id="HPbh" class="">Same as input type</td></tr><tr id="111e95aa-a103-46aa-afde-0e2b5e5ae8d7"><td id="ed&lt;I" class="">Saturating addition</td><td id="G@]X" class=""><code>saturating_add</code></td><td id="TOwQ" class="">Same as input type</td><td id="HPbh" class="">Same as input type</td></tr><tr id="e9089384-6a32-41c4-8c72-ed62540fc2f6"><td id="ed&lt;I" class="">Saturating multiplication</td><td id="G@]X" class=""><code>saturating_mul</code></td><td id="TOwQ" class="">Same as input type</td><td id="HPbh" class="">Same as input type</td></tr><tr id="b3adcaf1-178d-4620-bd9a-29adef71d9b3"><td id="ed&lt;I" class="">Swapping endianness</td><td id="G@]X" class=""><code>to_be</code> / <code>to_le</code></td><td id="TOwQ" class="">Same as input type</td><td id="HPbh" class="">None</td></tr><tr id="111b8ca1-640c-4dd1-903e-c85f67c627b1"><td id="ed&lt;I" class="">Arithmetic shift left</td><td id="G@]X" class=""><code>wrapping_shl</code></td><td id="TOwQ" class="">Same as input type</td><td id="HPbh" class=""><code>u32</code></td></tr><tr id="917affd5-403a-49f2-9556-5062fe0bc773"><td id="ed&lt;I" class="">Arithmetic shift right</td><td id="G@]X" class=""><code>wrapping_shr</code></td><td id="TOwQ" class="">Same as input type</td><td id="HPbh" class=""><code>u32</code></td></tr><tr id="8874eb5c-ba12-4b95-b9c9-2a54091daca5"><td id="ed&lt;I" class="">Bitwise AND</td><td id="G@]X" class=""><code>bitand</code></td><td id="TOwQ" class="">Same as input type</td><td id="HPbh" class="">Same as input type</td></tr><tr id="7eb5ddb4-857d-426c-9292-0b76cc497d09"><td id="ed&lt;I" class="">Bitwise OR</td><td id="G@]X" class=""><code>bitor</code></td><td id="TOwQ" class="">Same as input type</td><td id="HPbh" class="">Same as input type</td></tr><tr id="8a37c690-d009-4ff1-bace-5966be324255"><td id="ed&lt;I" class="">Bitwise XOR</td><td id="G@]X" class=""><code>bitxor</code></td><td id="TOwQ" class="">Same as input type</td><td id="HPbh" class="">Same as input type</td></tr><tr id="80f8d777-a987-4fdf-9df5-834a4526ed22"><td id="ed&lt;I" class="">Reversing the bits</td><td id="G@]X" class=""><code>reverse_bits</code></td><td id="TOwQ" class="">Same as input type</td><td id="HPbh" class="">None</td></tr><tr id="95863452-8018-4b24-a816-35acc43a7f80"><td id="ed&lt;I" class="">Counting the set bits (popcount)</td><td id="G@]X" class=""><code>count_ones</code></td><td id="TOwQ" class=""><code>u32</code></td><td id="HPbh" class="">None</td></tr><tr id="2d83eb45-d1f5-4fa9-8483-4233fda0e3b2"><td id="ed&lt;I" class="">Counting the leading zeros</td><td id="G@]X" class=""><code>leading_zeros</code></td><td id="TOwQ" class=""><code>u32</code></td><td id="HPbh" class="">None</td></tr><tr id="76284f91-2e5b-4643-a402-354ed4cbd81f"><td id="ed&lt;I" class="">Counting the trailing zeros</td><td id="G@]X" class=""><code>trailing_zeros</code></td><td id="TOwQ" class=""><code>u32</code></td><td id="HPbh" class="">None</td></tr></tbody></table><p id="e824807a-1d09-46c0-ada0-3d352d890575" class="">Please note that this table provides a subset of the available functions for integers in Rust. There may be additional functions and methods available for specific integer types.</p><p id="6344c181-5f7d-438d-9b14-2598f89963d9" class="">
+</p></div></article></body></html>
