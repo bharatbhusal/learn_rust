@@ -1,5 +1,5 @@
 pub mod errors {
-    use std::fs::File;
+    use std::fs::{self, File};
     use std::io::{self, ErrorKind, Read};
     pub fn primitive_error_handling() {
         let mut file = match File::open("hello.txt") {
@@ -54,5 +54,9 @@ pub mod errors {
         let mut username = String::new();
         username_file.read_to_string(&mut username)?;
         Ok(username)
+    }
+
+    pub fn read_file(filename: &str) -> Result<String, io::Error> {
+        fs::read_to_string(filename)
     }
 }

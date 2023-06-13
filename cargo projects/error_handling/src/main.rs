@@ -11,4 +11,5 @@ fn main() {
     // let data2 = error_propagation();
     let data2 = error_propagation_shortcut();
     println!("{:?}", data2);
+    println!("{:?}", read_file("hello.txt"));
 }
