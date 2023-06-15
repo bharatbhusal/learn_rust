@@ -1,28 +1,29 @@
+use iterators::basics::basic_iterator;
+use iterators::shoe::*;
 fn main() {
-    // let v1 = vec![4, 5, 6];
-    // let i1 = v1.iter();
-    // let c1 = i1.collect();
-    // println!("Vectors: {:?}\nIterator: {:?}\nCollect: {:?}", v1, i1, c1);
+    // basic_iterator();
+    let s1 = Shoe {
+        size: 5,
+        style: "Boots".to_string(),
+    };
+    let s2 = Shoe {
+        size: 8,
+        style: "ladies".to_string(),
+    };
+    let s3 = Shoe {
+        size: 8,
+        style: "treak".to_string(),
+    };
+    let s4 = Shoe {
+        size: 9,
+        style: "daily".to_string(),
+    };
+    let s5 = Shoe {
+        size: 8,
+        style: "Boots".to_string(),
+    };
 
-    let mut dark_sides = ["fear", "anger", "anxiety", "hate", "suffering"];
-    let mut data = [4, 3, 5, 2, 8, 0];
-
-    // let mut i = 0;
-    // while i < dark_sides.len() {
-    //     println!("i: {}\titem: {}", i, dark_sides[i]);
-    //     i += 1;
-    // }
-
-    // for (ind, &item) in dark_sides.iter().enumerate() {
-    //     println!("i: {}\titem: {}", ind, item);
-    // }
-    for item in data.iter_mut() {
-        *item = *item * 2;
-    }
-    println!("{:?}", data);
-}
-
-trait Iterator {
-    type Item;
-    fn next(&self) -> Option<Self::Item>;
+    let all_shoes = vec![s1, s2, s3, s4, s5];
+    let new_list = shoe_8(all_shoes, 8);
+    println!("Shoe 8: {}", new_list.len());
 }

@@ -1,0 +1,1 @@
+/Users/bharat/Documents/learn_rust/cargo\ projects/iterators/target/debug/libiterators.rlib: /Users/bharat/Documents/learn_rust/cargo\ projects/iterators/src/basics.rs /Users/bharat/Documents/learn_rust/cargo\ projects/iterators/src/lib.rs /Users/bharat/Documents/learn_rust/cargo\ projects/iterators/src/shoe.rs
