@@ -1,0 +1,9 @@
+[workspace]
+
+members = [
+    "calculate",
+    "adder",
+    "subtractor",
+    "divider",
+    "multiplier"
+]
