@@ -1,0 +1,9 @@
+prefix=/Users/bharat/Documents/learn_rust/cargo projects/calculator_workspace/target/debug/build/openssl-sys-5c962a39bfd2cbb0/out/openssl-build/install
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: OpenSSL
+Description: Secure Sockets Layer and cryptography libraries and tools
+Version: 1.1.1u
+Requires: libssl libcrypto

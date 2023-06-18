@@ -1,0 +1,11 @@
+/Users/bharat/Documents/learn_rust/cargo projects/calculator_workspace/target/debug/deps/gix_path-4762da4cad05c243.rmeta: /Users/bharat/.cargo/registry/src/index.crates.io-6f17d22bba15001f/gix-path-0.7.3/src/lib.rs /Users/bharat/.cargo/registry/src/index.crates.io-6f17d22bba15001f/gix-path-0.7.3/src/convert.rs /Users/bharat/.cargo/registry/src/index.crates.io-6f17d22bba15001f/gix-path-0.7.3/src/util.rs /Users/bharat/.cargo/registry/src/index.crates.io-6f17d22bba15001f/gix-path-0.7.3/src/spec.rs /Users/bharat/.cargo/registry/src/index.crates.io-6f17d22bba15001f/gix-path-0.7.3/src/realpath.rs
+
+/Users/bharat/Documents/learn_rust/cargo projects/calculator_workspace/target/debug/deps/libgix_path-4762da4cad05c243.rlib: /Users/bharat/.cargo/registry/src/index.crates.io-6f17d22bba15001f/gix-path-0.7.3/src/lib.rs /Users/bharat/.cargo/registry/src/index.crates.io-6f17d22bba15001f/gix-path-0.7.3/src/convert.rs /Users/bharat/.cargo/registry/src/index.crates.io-6f17d22bba15001f/gix-path-0.7.3/src/util.rs /Users/bharat/.cargo/registry/src/index.crates.io-6f17d22bba15001f/gix-path-0.7.3/src/spec.rs /Users/bharat/.cargo/registry/src/index.crates.io-6f17d22bba15001f/gix-path-0.7.3/src/realpath.rs
+
+/Users/bharat/Documents/learn_rust/cargo projects/calculator_workspace/target/debug/deps/gix_path-4762da4cad05c243.d: /Users/bharat/.cargo/registry/src/index.crates.io-6f17d22bba15001f/gix-path-0.7.3/src/lib.rs /Users/bharat/.cargo/registry/src/index.crates.io-6f17d22bba15001f/gix-path-0.7.3/src/convert.rs /Users/bharat/.cargo/registry/src/index.crates.io-6f17d22bba15001f/gix-path-0.7.3/src/util.rs /Users/bharat/.cargo/registry/src/index.crates.io-6f17d22bba15001f/gix-path-0.7.3/src/spec.rs /Users/bharat/.cargo/registry/src/index.crates.io-6f17d22bba15001f/gix-path-0.7.3/src/realpath.rs
+
+/Users/bharat/.cargo/registry/src/index.crates.io-6f17d22bba15001f/gix-path-0.7.3/src/lib.rs:
+/Users/bharat/.cargo/registry/src/index.crates.io-6f17d22bba15001f/gix-path-0.7.3/src/convert.rs:
+/Users/bharat/.cargo/registry/src/index.crates.io-6f17d22bba15001f/gix-path-0.7.3/src/util.rs:
+/Users/bharat/.cargo/registry/src/index.crates.io-6f17d22bba15001f/gix-path-0.7.3/src/spec.rs:
+/Users/bharat/.cargo/registry/src/index.crates.io-6f17d22bba15001f/gix-path-0.7.3/src/realpath.rs:

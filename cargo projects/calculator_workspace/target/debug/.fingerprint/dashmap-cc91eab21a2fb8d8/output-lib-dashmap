@@ -1,0 +1,6 @@
+info: syncing channel updates for '1.59-aarch64-apple-darwin'
+info: latest update on 2022-02-24, rust version 1.59.0 (9d1b2106e 2022-02-23)
+info: downloading component 'cargo'
+info: downloading component 'clippy'
+info: downloading component 'rust-std'
+info: downloading component 'rustc'
