@@ -4,7 +4,6 @@ fn main() {
     println!("{}", data1);
 
     // linked list
-    let my_list = next(4, Box::new(5, Box::new(x)));
 }
 
 enum List {
