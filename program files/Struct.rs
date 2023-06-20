@@ -20,6 +20,13 @@ fn main() {
     println!("Perimeter: {}", r1.perimeter());
     println!("Length: {}\nBreadth: {}", r1.get_len(), r1.get_bred());
     println!("{:#?}", r1);
+
+    //Update instance.
+    let r2 = Rectangle { length: 56.0, ..r1 };
+    println!("Area: {}", r2.area());
+    println!("Perimeter: {}", r2.perimeter());
+    println!("Length: {}\nBreadth: {}", r2.get_len(), r2.get_bred());
+    println!("{:#?}", r2);
 }
 
 #[derive(Debug)]

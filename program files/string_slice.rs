@@ -16,7 +16,9 @@ fn main() {
     println!("Slice2: {}", slice2);
     println!("Slice1: {}", slice1);
 
-    // &str and &String is same. Both are reference to string. string slice(&str) doesn't own data. it take the reference of string.
+    // &str is a refernece to string or string literal. &String is a reference to string.
+    // so, &str can be used to refer string or string literal but converse is not possible.
+    // string slice(&str) doesn't own data. it take the reference of string.
     let string1 = String::from("fuzz");
     let string2 = "fuzz";
     println!("Characters in string1: {}", count_chars(&string1));
