@@ -1,3 +1,6 @@
+use enumeration::{advanced::*, basic::*};
+
 fn main() {
-    println!("Hello, world!");
+    basic();
+    advanced();
 }
