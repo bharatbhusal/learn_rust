@@ -1,6 +1,7 @@
-use enumeration::{advanced::*, basic::*};
+use enumeration::{advanced::*, basic::*, if_let::*, other_keyword::*};
 
 fn main() {
-    basic();
-    advanced();
+    // basic();
+    // advanced();
+    // other_keyword();
 }
