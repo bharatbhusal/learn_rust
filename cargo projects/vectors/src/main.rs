@@ -2,10 +2,14 @@
 
 mod anagram;
 mod intersection;
+mod nested;
+mod ordering;
 mod unique;
 
 use crate::anagram::*;
 use crate::intersection::*;
+use crate::nested::*;
+use crate::ordering::*;
 use crate::unique::*;
 
 fn main() {
@@ -51,4 +55,12 @@ fn main() {
     let my_str1 = "rami";
     let my_str2 = "mira";
     println!("{}", anagram(my_str1, my_str2));
+
+    //nestec vector
+    let vec = vec![vec![4, 5, 3], vec![2, 1, 3], vec![9, 5, 4]];
+    println!("{:?}", nested(vec));
+
+    //ordering the elements
+    let my_lst = vec![5, 4, 3, 6, 5, 4, 1, 2, 9, 4, 8, 9];
+    println!("{:?}", order(my_lst));
 }
