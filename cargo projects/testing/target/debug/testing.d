@@ -1,1 +1,0 @@
-/Users/bharat/Documents/learn_rust/cargo\ projects/testing/target/debug/testing: /Users/bharat/Documents/learn_rust/cargo\ projects/testing/src/lib.rs /Users/bharat/Documents/learn_rust/cargo\ projects/testing/src/main.rs
